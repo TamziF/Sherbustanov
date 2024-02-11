@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import com.example.tinkoffprojectsfilms.App
+import com.example.tinkoffprojectsfilms.R
 import com.example.tinkoffprojectsfilms.databinding.FragmentFilmBinding
 import com.example.tinkoffprojectsfilms.ioc.ApplicationComponent
 import com.example.tinkoffprojectsfilms.ioc.film.FilmFragmentComponent
@@ -26,6 +28,10 @@ class FilmFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setFragmentResultListener(R.string.request_key.toString()) { _, bundle ->
+            bundle.getInt(R.string.bundle_key.toString()).let { viewModel.setFilmId(it) }
+        }
 
         fragmentComponent = FilmFragmentComponent(
             viewModel,

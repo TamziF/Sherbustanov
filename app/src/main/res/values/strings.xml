@@ -5,4 +5,6 @@
     <string name="popular">Популярные</string>
     <string name="error_message">Произошла ошибка при загрузке данных, проверьте подключение к сети</string>
     <string name="repeat">Повторить</string>
+    <string name="request_key">requestKey</string>
+    <string name="bundle_key">bundleKey</string>
 </resources>

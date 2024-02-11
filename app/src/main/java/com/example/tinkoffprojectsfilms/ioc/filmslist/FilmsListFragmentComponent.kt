@@ -8,5 +8,5 @@ class FilmsListFragmentComponent(
     val viewModel: FilmsListViewModel,
     val fragment: FilmsListFragment
 ) {
-    val adapter = FilmsAdapter()
+    val adapter = FilmsAdapter(fragment)
 }

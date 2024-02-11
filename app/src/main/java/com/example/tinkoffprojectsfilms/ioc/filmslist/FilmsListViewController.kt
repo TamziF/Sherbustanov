@@ -39,21 +39,20 @@ class FilmsListViewController(
                 viewModel.downloadState.collect {
                     when (it) {
                         DownloadState.LOADING -> {
-                            Log.v("TESTOSTATE", "LOADING")
+                            Log.v("TESTOSTERON", "LOADING")
                             hideErrors()
                             recyclerView.visibility = View.INVISIBLE
                             loadingCircle.visibility = View.VISIBLE
                         }
 
                         DownloadState.DOWNLOAD -> {
-                            Log.v("TESTOSTATE", "DOWNLOAD")
+                            Log.v("TESTOSTERON", "DOWNLOAD")
                             hideErrors()
                             loadingCircle.visibility = View.INVISIBLE
                             recyclerView.visibility = View.VISIBLE
                         }
 
                         DownloadState.ERROR -> {
-                            Log.v("TESTOSTATE", "ERROR")
                             loadingCircle.visibility = View.INVISIBLE
                             recyclerView.visibility = View.INVISIBLE
                             showErrors()
